@@ -1,23 +1,12 @@
 import scrapy
 from scrapy_splash import SplashRequest
-from tutorial.items import CnCrawlerItem
+from test.tutorial.items import TutorialItem
 
-
-
-# Todo
-# 랜더링 시 image_url이 로딩 중을 의미하는 사진 url을 가져오는 부분 수정 필요함
-# 개선 사항
-# 1. 사이트 상세 메뉴의 url 스크랩
-# 2. 상세 url에 접속하여 product_name, price, image를 가져오는 코드로 변경
-# 3. 속도는 느려지지만 안정성 크게 상승
 class VipshopSpider(scrapy.Spider):
     name = "vipshop"  # 스파이더에 대한 고유한 이름을 지정합니다.
 
     def start_requests(self):
-        keyword = "宠物"
-        start_urls = Endpoint(
-            keyword=keyword
-        ).vipmall_endpoint()  # start_urls을 빌드합니다.
+        start_urls = "https://list.vip.com/autolist.html?rule_id=53986307&title=%E8%BF%9E%E8%A1%A3%E8%A3%99&refer_url=https%3A%2F%2Fcategory.vip.com%2Fhome"
 
         # SplashRequest를 사용해 JS 지원 페이지를 처리합니다.
         # 스크립트에서 페이지 아래로 스크롤하는 함수가 포함되어 있습니다.
