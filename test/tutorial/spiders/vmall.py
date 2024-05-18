@@ -45,7 +45,7 @@ class VipshopSpider(scrapy.Spider):
     def parse_result(self, response):
         # 상품 목록에 대한 각각의 선택자를 반복합니다.
         for sel in response.css(".goods-list.c-goods-list--normal"):
-            item = CnCrawlerItem()
+            item = TutorialItem()
 
             # 각 상품에 대한 제품명, 가격, URL, 이미지 URL을 추출합니다.
             product_names = sel.css(".c-goods-item__name::text").getall()
